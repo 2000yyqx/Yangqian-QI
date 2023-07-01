@@ -6,9 +6,12 @@ import json
 
 st.title('重庆旅游景点分布')
 import pandas as pd
-geo = pd.read_csv(r"C:\Users\ASUS\Desktop\软件工程与GIS开发\CQ.csv")
+url="https://github.com/2000yyqx/Yangqian-QI/blob/main/CQ.csv"
+geo = pd.read_csv(url,encoding='utf-8')
+#geo = pd.read_csv(r"C:\Users\ASUS\Desktop\软件工程与GIS开发\CQ.csv")
 import geopandas as gpd
-file_path='C:/Users/ASUS/Desktop/软件工程与GIS开发/locations.geojson'  # 文件路径，需要替换为实际的文件路径
+file_path="https://github.com/2000yyqx/Yangqian-QI/blob/main/locations.geojson"
+#file_path='C:/Users/ASUS/Desktop/软件工程与GIS开发/locations.geojson'  # 文件路径，需要替换为实际的文件路径
 geo = gpd.read_file(file_path)
 Minx=min(geo.bounds["minx"])
 Miny=min(geo.bounds["miny"])
